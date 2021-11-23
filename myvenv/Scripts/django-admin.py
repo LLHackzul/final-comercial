@@ -1,4 +1,4 @@
-#!c:\finalcomercial\myvenv\scripts\python.exe
+#!D:\mover\OctavoSemestre\progracomercial\final\final-comercial\myvenv\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
