@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Listado de Doctores</title>
+  </head>
+  <body>
+    <h2>Listado de Doctores</h2> 
+    <a href="{% url 'new_doctor'%}">Nuevo doctor</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">CUI</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Numero</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mant in doctoress %}
+        <tr>
+          <td>{{mant.cui}}</td>
+          <td>{{mant.firstName}} {{mant.firstSurname}}</td>
+          <td>{{mant.number}}</td>
+          <td>{{mant.email}}</td>
+          <td><a href="{% url 'doctor_edit' pk=mant.pk %}">Editar</a> <a href="{% url 'doctor_remove' pk=mant.pk %}"">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
