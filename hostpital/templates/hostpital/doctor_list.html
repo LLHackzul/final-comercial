@@ -34,13 +34,13 @@
         </tr>
       </thead>
       <tbody>
-        {% for mant in doctoress %}
+        {% for doc in doctoress %}
         <tr>
-          <td>{{mant.cui}}</td>
-          <td>{{mant.firstName}} {{mant.firstSurname}}</td>
-          <td>{{mant.number}}</td>
-          <td>{{mant.email}}</td>
-          <td><a href="{% url 'doctor_edit' pk=mant.pk %}">Editar</a> <a href="{% url 'doctor_remove' pk=mant.pk %}"">Eliminar</a></td>
+          <td>{{doc.cui}}</td>
+          <td>{{doc.firstName}} {{doc.firstSurname}}</td>
+          <td>{{doc.number}}</td>
+          <td>{{doc.email}}</td>
+          <td><a href="{% url 'doctor_edit' pk=doc.pk %}">Editar</a> <a href="{% url 'doctor_remove' pk=doc.pk %}"">Eliminar</a></td>
         </tr>
         {% endfor %}
       </tbody>
