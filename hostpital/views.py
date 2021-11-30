@@ -2,8 +2,8 @@ from django.http import request
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Doctores, Mantenimiento,Pacientes, Anestesia, Assistant
 from .forms import DoctoresForm, MantenimientoForm, PacientesForm, AnestesiaForm, AssistantForm
-
-
+from django.contrib.auth.decorators import login_required
+@login_required
 def list_Assistant(request):
     assist = Assistant.objects.all()
     return render(request, 'hostpital/list_Assistant.html', {'Enfermeria': assist})
@@ -14,6 +14,7 @@ def new_Assistant(request):
         if form.is_valid():
             assist= form.save(commit=False)
             assist.save()
+            return redirect('list_Assistant')
     else:
         form= AssistantForm()
     return render(request, 'hostpital/new_Assistant.html',{'form': form})
@@ -35,7 +36,7 @@ def remove_Assistant(request, pk):
     assist.delete()
     return redirect('list_Assistant')
 
-
+@login_required
 def anestesia_list(request):
     anestesia = Anestesia.objects.all()
     return render(request, 'hostpital/anestesia_list.html', {'anestesia': anestesia})
@@ -73,7 +74,7 @@ def inicio(request):
     return render( request, 'hostpital/index.html')
 
 
-
+@login_required
 def paciente_list(request):
     paciente = Pacientes.objects.all()
     return render(request, 'hostpital/paciente_list.html',{'pacientes':paciente})
@@ -106,7 +107,7 @@ def paciente_remove(request, pk):
     paciente.delete()
     return redirect('paciente_list')
 
-
+@login_required
 def doctor_list(request):
     doctor = Doctores.objects.all()
     return render(request, 'hostpital/doctor_list.html', {'doctoress': doctor})
@@ -138,7 +139,7 @@ def doctor_remove(request, pk):
     doctor.delete()
     return redirect('doctor_list') 
 
-
+@login_required
 def mantenimiento_list(request):
     mantenimiento = Mantenimiento.objects.all()
     return render(request, 'hostpital/mantenimiento_list.html', {'mantenimientos': mantenimiento})

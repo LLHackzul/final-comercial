@@ -1,0 +1,43 @@
+.login-page {
+    padding: 18% 0 0;
+    margin: 0 auto 100px;
+    max-width: 360px;
+    position: relative;
+}
+
+.login-form {
+    box-shadow: 0 0 27px 0 rgba(84, 84, 84, 0.62);
+}
+
+.col-md-12.login-form-header {
+    padding-top: 16px;
+}
+
+.col-md-12.login-from-row {
+    padding-top: 15px;
+    padding-bottom: 1px;
+}
+
+.login-form-font-header {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+    .login-form-font-header span {
+        color: #007C9B;
+    }
+
+.enter{
+    width:300px;
+    font-size:20px;
+}
+
+.col-md-12.login-btn {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.padre {
+    background: red;
+    overflow: hidden;
+}
