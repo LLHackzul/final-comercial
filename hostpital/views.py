@@ -1,3 +1,4 @@
+from django.http import request
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Anestesia
@@ -35,3 +36,6 @@ def anestesia_remove(request, pk):
     anestesia = get_object_or_404(Anestesia, pk=pk)
     anestesia.delete()
     return redirect('anestesia_list')
+
+def inicio(request):
+    return render( request, 'hostpital/index.html')
