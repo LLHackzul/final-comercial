@@ -1,5 +1,13 @@
 from django import forms
-from .models import Doctores, Mantenimiento, Pacientes, Anestesia
+
+from .models import Doctores, Mantenimiento, Pacientes, Anestesia, Assistant
+
+class AssistantForm(forms.ModelForm):
+
+    class Meta:
+        model = Assistant
+        fields = ('cui', 'firstName', 'secondName', 'firstSurname','secondSurname', 'number', 'email', 'AssistType')
+
 
 class AnestesiaForm(forms.ModelForm):
 
