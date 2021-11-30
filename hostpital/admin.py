@@ -1,4 +1,8 @@
 from django.contrib import admin
-from .models import Anestesia
-# Register your models here.
+
+from .models import Mantenimiento, Doctores, Pacientes, Anestesia
+
+admin.site.register(Doctores)
+admin.site.register(Mantenimiento)
+admin.site.register(Pacientes)
 admin.site.register(Anestesia)
