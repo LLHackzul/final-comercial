@@ -3,6 +3,12 @@ from . import views
 
 urlpatterns = [
 
+    path('', views.inicio, name='inicio'),
+    path('anestesia/', views.anestesia_list, name='anestesia_list'),
+    path('agregar/anestesia/', views.new_anestesia, name='new_anestesia'),
+    path('anestesia/<pk>/edit/', views.anestesia_edit, name='anestesia_edit'),
+    path('anestesia/<pk>/remove/', views.anestesia_remove, name='anestesia_remove'),
+
     path('paciente/', views.paciente_list, name='paciente_list'),
     path('agregar/paciente/', views.new_paciente, name='new_paciente'),
     path('paciente/<pk>/edit/', views.paciente_edit, name='paciente_edit'),
