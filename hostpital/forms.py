@@ -1,6 +1,11 @@
 from django import forms
 
-from .models import Mantenimiento
+from .models import Doctores, Mantenimiento
+
+class DoctoresForm(forms.ModelForm):
+
+    class Meta:
+        model = Doctores
 
 class MantenimientoForm(forms.ModelForm):
 
