@@ -1,3 +1,4 @@
+
 from django.db import migrations, models
 
 class Migration(migrations.Migration):
@@ -8,6 +9,19 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+         migrations.CreateModel(
+            name='Pacientes',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('historyNumber', models.CharField(max_length=100)),
+                ('firstName', models.CharField(max_length=100)),
+                ('secondName', models.CharField(max_length=100)),
+                ('firtSurname', models.CharField(max_length=100)),
+                ('secondSurname', models.CharField(max_length=100)),
+                ('age', models.CharField(max_length=100)),
+                ('gender', models.CharField(max_length=100)),
+            ],
+        ),
         migrations.CreateModel(
             name='Doctores',
             fields=[
@@ -35,3 +49,5 @@ class Migration(migrations.Migration):
             ],
         ),
     ]
+
+ 
